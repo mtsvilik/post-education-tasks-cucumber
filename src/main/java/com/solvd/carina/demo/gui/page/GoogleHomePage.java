@@ -1,4 +1,4 @@
-package com.solvd.carina.demo.gui.pages;
+package com.solvd.carina.demo.gui.page;
 
 import com.qaprosoft.carina.core.foundation.utils.Configuration;
 import com.qaprosoft.carina.core.foundation.utils.R;

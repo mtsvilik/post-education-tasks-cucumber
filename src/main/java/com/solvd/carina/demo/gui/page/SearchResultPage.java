@@ -1,7 +1,7 @@
-package com.solvd.carina.demo.gui.pages;
+package com.solvd.carina.demo.gui.page;
 
 import com.qaprosoft.carina.core.gui.AbstractPage;
-import com.solvd.carina.demo.gui.components.SearchResultElement;
+import com.solvd.carina.demo.gui.component.SearchResultElement;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.FindBy;
 

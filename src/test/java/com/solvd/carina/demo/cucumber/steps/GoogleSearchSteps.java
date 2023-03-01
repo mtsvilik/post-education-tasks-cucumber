@@ -1,8 +1,8 @@
 package com.solvd.carina.demo.cucumber.steps;
 
 import com.qaprosoft.carina.core.foundation.webdriver.IDriverPool;
-import com.solvd.carina.demo.gui.pages.GoogleHomePage;
-import com.solvd.carina.demo.gui.pages.SearchResultPage;
+import com.solvd.carina.demo.gui.page.GoogleHomePage;
+import com.solvd.carina.demo.gui.page.SearchResultPage;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
