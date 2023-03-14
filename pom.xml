@@ -8,12 +8,14 @@
 	<artifactId>post-education-tasks-cucumber</artifactId>
 	<version>1.0</version>
 	<packaging>jar</packaging>
-	<name>Google simple test</name>
+	<name>Post education tasks Cucumber</name>
 	<url>https://zebrunner.com</url>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<carina-cucumber_version>7.4.28</carina-cucumber_version>
+		<postgresql_version>42.5.4</postgresql_version>
+		<mybatis_version>3.5.12</mybatis_version>
 		<java.version>11</java.version>
 		<zebrunner-agent.version>1.7.4</zebrunner-agent.version>
 		<suite>cucumber-web</suite>
@@ -40,7 +42,16 @@
 			<artifactId>carina-cucumber</artifactId>
 			<version>${carina-cucumber_version}</version>
 		</dependency>
-
+		<dependency>
+			<groupId>org.postgresql</groupId>
+			<artifactId>postgresql</artifactId>
+			<version>${postgresql_version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.mybatis</groupId>
+			<artifactId>mybatis</artifactId>
+			<version>${mybatis_version}</version>
+		</dependency>
 		<dependency>
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-api</artifactId>

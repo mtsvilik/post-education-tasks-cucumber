@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.solvd.posteducationtaskscucumber.saucedemo.db.persistence.OrderRepository">
+    <insert id="create" keyColumn="id" keyProperty="id" useGeneratedKeys="true">
+        insert into orders (user_id) value (#{userId})
+    </insert>
+
+    <insert id="createProductConnection" keyColumn="id" useGeneratedKeys="true">
+        insert into order_products (order_id, product_id)
+        values ((select id from `orders` where id = #{order.id}),
+        (select id from products where title = #{product.title}, description = #{product.description},
+        quantity = #{product.quantity}, price = #{product.price}))
+    </insert>
+
+    <select id="read" resultMap="OrderResultMap">
+        select
+        o.id as order_id, o.user_id as order_user_id,
+        op.id as order_products_id,
+        p.id as product_id, p.title as product_title,
+        p.description as product_description, p.quantity as product_quantity,
+        p.price as product_price
+        from orders o
+        left join order_products op
+        on op.order_id = o.id
+        left join products p
+        on op.product_id = p.id
+        where o.id = #{order_id};
+    </select>
+
+    <resultMap id="OrderResultMap" type="com.solvd.posteducationtaskscucumber.saucedemo.db.domain.Order"
+               autoMapping="false">
+        <id property="id" column="order_id"/>
+        <collection property="products" ofType="Product"
+                    resultMap="com.solvd.posteducationtaskscucumber.saucedemo.db.persistence.ProductRepository.ProductResultMap"/>
+    </resultMap>
+
+    <delete id="delete">
+        delete from orders where id = #{id}
+    </delete>
+</mapper>
