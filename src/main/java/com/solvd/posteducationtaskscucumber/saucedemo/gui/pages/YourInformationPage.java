@@ -46,4 +46,8 @@ public class YourInformationPage extends AbstractPage {
         continueButton.click();
         return new OverviewPage(getDriver());
     }
+
+    public String getLastNameText() {
+        return lastNameField.getText();
+    }
 }

@@ -18,6 +18,10 @@ public class LogInPage extends AbstractPage {
     @FindBy(id = "login-button")
     private ExtendedWebElement loginButton;
 
+    @FindBy(xpath = "//*[@class='error-message-container error']" +
+            "//*[contains (text(), 'Epic sadface: Sorry, this user has been locked out.')]")
+    private ExtendedWebElement lockedOutText;
+
     public LogInPage(WebDriver driver) {
         super(driver);
         setPageAbsoluteURL(R.CONFIG.get(Configuration.Parameter.URL.getKey()));
@@ -34,5 +38,9 @@ public class LogInPage extends AbstractPage {
     public ProductPage clickLoginButton() {
         loginButton.click();
         return new ProductPage(getDriver());
+    }
+
+    public boolean isLockedOutTextPresent() {
+        return lockedOutText.isElementPresent();
     }
 }
