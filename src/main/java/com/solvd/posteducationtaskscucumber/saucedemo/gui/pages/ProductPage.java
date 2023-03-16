@@ -21,6 +21,7 @@ public class ProductPage extends AbstractPage {
         super(driver);
         setPageOpeningStrategy(PageOpeningStrategy.BY_ELEMENT);
         setUiLoadedMarker(productPageTitle);
+        setPageAbsoluteURL("https://www.saucedemo.com/inventory.html");
     }
 
     public void clickAddToCartButton(String product) {

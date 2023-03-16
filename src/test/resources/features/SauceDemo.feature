@@ -39,5 +39,3 @@ Feature: SauceDemo testing
     When Click Checkout button
     Then Page Your information page should be open
     When I can enter first name and zip code, but I can't enter last name
-
-
